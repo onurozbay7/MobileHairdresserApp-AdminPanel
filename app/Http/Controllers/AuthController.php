@@ -62,7 +62,7 @@ class AuthController extends Controller
         return response($response, 200);
     }
 
-    public function user() {
+    public function me() {
         return response([
             'user' => Auth::user(), 200
         ]);

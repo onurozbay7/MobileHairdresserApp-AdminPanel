@@ -18,23 +18,42 @@ Route::get('/', function () {
 });
 
 
+Route::get('login',[App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
+Route::post('login', [App\Http\Controllers\Auth\LoginController::class, 'login']);
+Route::post('logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
+
+// Registration Routes...
+Route::get('register', [App\Http\Controllers\Auth\RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('register', [App\Http\Controllers\Auth\RegisterController::class, 'register']);
 
 
-Auth::routes();
+Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth:worker');
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::group(['namespace'=>'front','middleware'=>['auth:worker']],function (){
 
-Route::group(['namespace'=>'front','middleware'=>['auth']],function (){
-    Route::group(['namespace'=>'profil','as'=>'profil.', 'prefix'=>'profil'], function (){
-    Route::group(['namespace'=>'profil','as'=>'profil.', 'prefix'=>'profil'], function (){
+        Route::group(['namespace'=>'profil','as'=>'profil.', 'prefix'=>'profil'], function (){
 
-        Route::get('/',[App\Http\Controllers\front\profil\indexController::class, 'index'])->name('index');
-        Route::post('/',[App\Http\Controllers\front\profil\indexController::class, 'update'])->name('update');
+            Route::get('/',[App\Http\Controllers\front\workerProfile\indexController::class, 'index'])->name('index');
+            Route::post('/',[App\Http\Controllers\front\workerProfile\indexController::class, 'update'])->name('update');
 
-    });
+        });
+
+        Route::group(['namespace'=>'workinghours','as'=>'workinghours.', 'prefix'=>'workinghours'], function (){
+
+            Route::get('/', [App\Http\Controllers\front\workinghours\indexController::class, 'index'])->name('index');
+            Route::get('/olustur',[App\Http\Controllers\front\workinghours\indexController::class, 'create'])->name('create');
+            Route::post('/olustur',[App\Http\Controllers\front\workinghours\indexController::class, 'store'])->name('store');
+            Route::get('/duzenle/{id}',[App\Http\Controllers\front\workinghours\indexController::class, 'edit'])->name('edit');
+            Route::post('/duzenle/{id}',[App\Http\Controllers\front\workinghours\indexController::class, 'update'])->name('update');
+            Route::get('/delete/{id}',[App\Http\Controllers\front\workinghours\indexController::class, 'delete'])->name('delete');
+            Route::post('/data', [App\Http\Controllers\front\workinghours\indexController::class, 'data'])->name('data');
+        });
 
 
-    Route::group(['namespace'=>'logger','as'=>'logger.', 'prefix'=>'logger'], function (){
+
+
+
+   /* Route::group(['namespace'=>'logger','as'=>'logger.', 'prefix'=>'logger'], function (){
 
         Route::get('/',[App\Http\Controllers\front\logger\indexController::class, 'index'])->name('index');
         Route::post('/data', [App\Http\Controllers\front\logger\indexController::class, 'data'])->name('data');
@@ -57,7 +76,7 @@ Route::group(['namespace'=>'front','middleware'=>['auth']],function (){
         Route::get('/delete/{id}',[App\Http\Controllers\front\musteriler\indexController::class, 'delete'])->name('delete');
         Route::get('/cari/{id}',[App\Http\Controllers\front\musteriler\indexController::class, 'cari'])->name('cari');
         Route::post('/data', [App\Http\Controllers\front\musteriler\indexController::class, 'data'])->name('data');
-    });
+    });*/
 
-    });
+
 });

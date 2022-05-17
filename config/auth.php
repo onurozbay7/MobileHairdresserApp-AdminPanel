@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'workers',
+        'passwords' => 'users',
     ],
 
 
@@ -39,6 +39,17 @@ return [
 
     'guards' => [
         'web' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+
+
+        'user' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+
+        'worker' => [
             'driver' => 'session',
             'provider' => 'workers',
         ],
@@ -102,7 +113,12 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
+
+
+
     ],
+
+
 
     /*
     |--------------------------------------------------------------------------

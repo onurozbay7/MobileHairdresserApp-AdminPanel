@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
+
+use App\Helper\fileUpload;
 use App\Http\Controllers\Controller;
 use App\Models\Worker;
+use App\Models\WorkerProfile;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -39,6 +42,7 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+        $this->middleware('guest:worker');
     }
 
     /**
@@ -65,11 +69,16 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $request = request();
+
+
+
         return Worker::create([
             'name' => $data['name'],
             'phone' => $data['phone'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
     }
 }

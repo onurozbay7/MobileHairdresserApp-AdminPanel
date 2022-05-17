@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Sanctum\HasApiTokens;
 
 class Worker extends Authenticatable
@@ -42,4 +43,20 @@ class Worker extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    static function getPhoto()
+    {
+        if(WorkerProfile::where('workerId', Auth::id())->exists())
+        {
+            $photo = WorkerProfile::where('workerId', Auth::id())->get();
+            if ($photo[0]['photo'] != "") {
+                return $photo[0]['photo'];
+            } else {
+                return "assets/demo/users/default-profile.png";
+            }
+        } else {
+            return "assets/demo/users/default-profile.png";
+        }
+
+    }
 }

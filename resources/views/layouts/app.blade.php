@@ -68,7 +68,7 @@
         <!-- /.btn-list -->
         <!-- User Image with Dropdown -->
         <ul class="nav navbar-nav">
-            <li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle ripple" data-toggle="dropdown"><span class="avatar thumb-xs2"><img src="" class="rounded-circle" alt=""> <i class="feather feather-chevron-down list-icon"></i></span></a>
+            <li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle ripple" data-toggle="dropdown"><span class="avatar thumb-xs2"><img src="{{ \App\Models\Worker::getPhoto() }}" class="rounded-circle" alt=""> <i class="feather feather-chevron-down list-icon"></i></span></a>
                 <div class="dropdown-menu dropdown-left dropdown-card dropdown-card-profile animated flipInY">
                     <div class="card">
                         <header class="card-header d-flex mb-0">
@@ -83,7 +83,7 @@
                         </header>
                         <ul class="list-unstyled card-body">
                             <li>
-                                <a href=""><span><span class="align-middle">Profil Düzenle</span></span></a>
+                                <a href="{{ route('profil.index') }}"><span><span class="align-middle">Profil Düzenle</span></span></a>
                             </li>
                             <li>
                                 <a href="{{ route('logout') }}" id="cikisButonu"><span><span class="align-middle">Çıkış</span></span></a>
@@ -132,11 +132,11 @@
                 <div class="col-sm-12 text-center p-0 clearfix">
                     <div class="d-inline-block pos-relative mr-b-10">
                         <figure class="thumb-sm mr-b-0 user--online">
-                            <img src="" class="rounded-circle" alt="">
+                            <img src="{{ \App\Models\Worker::getPhoto() }}" class="rounded-circle" alt="">
                         </figure><a href="" class="text-muted side-user-link"><i class="feather feather-settings list-icon"></i></a>
                     </div>
                     <!-- /.d-inline-block -->
-                    <div class="lh-14 mr-t-5"><a href="" class="hide-menu mt-3 mb-0 side-user-heading fw-500"></a>
+                    <div class="lh-14 mr-t-5"><a href="" class="hide-menu mt-3 mb-0 side-user-heading fw-500">{{ Auth::user()->name }}</a>
                         <br><small class="hide-menu">Admin</small>
                     </div>
                 </div>
