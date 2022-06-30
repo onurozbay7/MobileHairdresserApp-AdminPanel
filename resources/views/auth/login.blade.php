@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/demo/favicon.png')}}">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Teksöz Finans</title>
+    <title>Mobile Hairdressing</title>
     <!-- CSS -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600|Roboto:400" rel="stylesheet" type="text/css">
     <link href="{{asset('assets/vendors/material-icons/material-icons.css')}}" rel="stylesheet" type="text/css">
@@ -26,7 +26,7 @@
     <div class="row container-min-full-height">
         <div class="col-lg-8 p-3 login-left">
             <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding-bottom: 30px">
-                <img src="{{ asset('assets/demo/logo-expand.png') }}" alt=""><p style="margin-left: 30px;"></p>
+                <img src="{{ asset('images/mainLogo.png') }}" alt=""><p style="margin-left: 30px;"></p>
             </div>
             <div class="w-50">
 

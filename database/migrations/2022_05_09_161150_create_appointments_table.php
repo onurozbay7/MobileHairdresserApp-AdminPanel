@@ -15,15 +15,14 @@ return new class extends Migration
     {
         Schema::create('appointments', function (Blueprint $table) {
             $table->id();
-            $table->string('musteriAd');
-            $table->string('phone');
-            $table->string('email');
+            $table->string('userId');
+            $table->string('workerId');
             $table->date('date');
-            $table->string('workingHour');
+            $table->string('workingHourId');
             $table->string('adress');
-            $table->string('service');
-            $table->string('text');
-            $table->boolean('isAccept');
+            $table->string('serviceId');
+            $table->string('text')->nullable();
+            $table->boolean('isAccept')->default(0);
             $table->timestamps();
         });
     }

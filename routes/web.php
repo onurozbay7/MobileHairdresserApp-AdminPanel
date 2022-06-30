@@ -49,6 +49,25 @@ Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name(
             Route::post('/data', [App\Http\Controllers\front\workinghours\indexController::class, 'data'])->name('data');
         });
 
+        Route::group(['namespace'=>'servicelist','as'=>'servicelist.', 'prefix'=>'servicelist'], function (){
+
+            Route::get('/', [App\Http\Controllers\front\servicelist\indexController::class, 'index'])->name('index');
+            Route::get('/olustur',[App\Http\Controllers\front\servicelist\indexController::class, 'create'])->name('create');
+            Route::post('/olustur',[App\Http\Controllers\front\servicelist\indexController::class, 'store'])->name('store');
+            Route::get('/duzenle/{id}',[App\Http\Controllers\front\servicelist\indexController::class, 'edit'])->name('edit');
+            Route::post('/duzenle/{id}',[App\Http\Controllers\front\servicelist\indexController::class, 'update'])->name('update');
+            Route::get('/delete/{id}',[App\Http\Controllers\front\servicelist\indexController::class, 'delete'])->name('delete');
+            Route::post('/data', [App\Http\Controllers\front\servicelist\indexController::class, 'data'])->name('data');
+        });
+
+        Route::group(['namespace'=>'appointment','as'=>'appointment.', 'prefix'=>'appointment'], function (){
+
+            Route::get('/', [App\Http\Controllers\front\appointment\indexController::class, 'index'])->name('index');
+            Route::get('/confirm/{id}', [App\Http\Controllers\front\appointment\indexController::class, 'confirm'])->name('confirm');
+            Route::get('/denie/{id}', [App\Http\Controllers\front\appointment\indexController::class, 'denie'])->name('denie');
+            Route::post('/data', [App\Http\Controllers\front\appointment\indexController::class, 'data'])->name('data');
+        });
+
 
 
 

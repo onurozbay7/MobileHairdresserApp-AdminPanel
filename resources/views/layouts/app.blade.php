@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/demo/logo-collapse.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/mainLogo.png')}}">
     <link rel="stylesheet" href="{{asset('assets/css/pace.css')}}">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Teksöz Finans</title>
+    <title>Mobile Hairdressing</title>
     <!-- CSS -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600|Roboto:400" rel="stylesheet" type="text/css">
     <link href="{{asset('assets/vendors/material-icons/material-icons.css')}}" rel="stylesheet" type="text/css">
@@ -41,8 +41,8 @@
         <!-- Logo Area -->
         <div class="navbar-header ">
             <a href="/" class="navbar-brand">
-                <img class="logo-expand" style="width: 80%;" alt="" src="{{asset('assets/demo/logo-expand.png')}}">
-                <img class="logo-collapse" style="width: 80%;" alt="" src="{{asset('assets/demo/logo-collapse.png')}}">
+                <img class="logo-expand" style="width: 80%;" alt="" src="{{asset('images/logo-collapse.png')}}">
+                <img class="logo-collapse" style="width: 80%;" alt="" src="{{asset('images/mainLogo.png')}}">
                 <!-- <p>BonVue</p> -->
             </a>
         </div>
@@ -57,14 +57,7 @@
         <!-- /.navbar-search -->
         <div class="spacer"></div>
         <!-- Button: Create New -->
-        <div class="btn-list dropdown d-none d-md-flex mr-4 mr-0-rtl ml-4-rtl"><a href="javascript:void(0);" class="btn btn-primary dropdown-toggle ripple" data-toggle="dropdown"><i class="feather feather-plus list-icon"></i> Oluştur</a>
-            <div class="dropdown-menu dropdown-left animated flipInY"><span class="dropdown-header">Yeni Bir ...</span>
-                <a class="dropdown-item" href="">Gelir Fişi</a>
-                <a class="dropdown-item" href="">Gider Fişi</a>
-                <a class="dropdown-item" href="">Ödeme Yap</a>
-                <a class="dropdown-item" href="">Tahsilat Al</a>
-            </div>
-        </div>
+
         <!-- /.btn-list -->
         <!-- User Image with Dropdown -->
         <ul class="nav navbar-nav">
@@ -73,11 +66,7 @@
                     <div class="card">
                         <header class="card-header d-flex mb-0">
 
-                                <a href="" title="Kullanıcı Ekle" class="col-md-4 text-center"><i class="feather feather-user-plus align-middle"></i></a>
-                                <a href="" title="Kullanıcı Listesi" class="col-md-4 text-center"><i class="feather feather-users align-middle"></i> </a>
-                                <a href="" title="Hareket Listesi" class="col-md-4 text-center"><i class="feather feather-clipboard align-middle"></i> </a>
 
-                                <a href="" title="Hareket Listesi" class="col-md-12 text-center"><i class="feather feather-clipboard align-middle"></i> </a>
 
 
                         </header>
@@ -156,7 +145,7 @@
     </div>
     <!-- /.content-wrapper -->
     <!-- FOOTER -->
-    <footer class="footer d-print-none"><span class="heading-font-family">Copyright @2021. All rights reserved creator of the Teksoz Finans, Ozzie</span>
+    <footer class="footer d-print-none"><span class="heading-font-family">Copyright @2022. All rights reserved creator of the Worker Panel, Onur Özbay</span>
     </footer>
 </div>
 <!--/ #wrapper -->

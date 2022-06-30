@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('photo')->nullable();
             $table->string('il')->nullable();
             $table->string('ilce')->nullable();
+            $table->integer('isAccept')->default(0);
             $table->timestamps();
         });
     }

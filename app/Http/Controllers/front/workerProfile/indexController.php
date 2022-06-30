@@ -26,8 +26,8 @@ class indexController extends Controller
             Worker::where('id', Auth::id())->update(['password' => $all['password']]);
         }
         $data = Worker::where('id',Auth::id())->get();
-        $all['photo'] = fileUpload::changeUpload($data['id'] + $all['name']. " photo","profil",$request->file('photo'),0,$data,"photo");
-        $all['belge'] = fileUpload::changeUpload($data['id'] + $all['name']. " belge","profil",$request->file('belge'),0,$data,"belge");
+        $all['photo'] = fileUpload::changeUpload($data[0]['id']. "photo","profil",$request->file('photo'),0,$data,"photo");
+        $all['belge'] = fileUpload::changeUpload($data[0]['id']. "belge","profil",$request->file('belge'),0,$data,"belge");
         $update = Worker::where('id',Auth::id())->update(['name' => $all['name'], 'email' => $all['email']]);
         if (WorkerProfile::where('workerId', '=', $data[0]['id'])->exists()) {
             $profil = WorkerProfile::where('workerId',$data[0]['id'])->update(array_filter($all));

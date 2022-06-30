@@ -11,7 +11,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Panel</a>
                 </li>
-                <li class="breadcrumb-item active">Banka</li>
+                <li class="breadcrumb-item active">Çalışma Saatleri</li>
             </ol>
             <div class="d-none d-md-inline-flex justify-center align-items-center">
                 <a href="{{ route('workinghours.index') }}" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple">Çalışma Saatleri</a>

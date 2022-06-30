@@ -24,10 +24,15 @@ Route::prefix('user')->group( function () {
         Route::post('/logout',[App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
 
 
-        Route::get('/working-hours/{date?}',[App\Http\Controllers\front\api\indexController::class, 'getWorkingHours'])->name('getWorkingHours');
+        Route::get('/working-hours/{workerId}/{date}',[App\Http\Controllers\front\api\indexController::class, 'getWorkingHours'])->name('getWorkingHours');
         Route::post('/createUserAdress',[App\Http\Controllers\front\api\indexController::class, 'createUserAdress'])->name('createUserAdress');
+        Route::post('/createAppointment',[App\Http\Controllers\front\api\indexController::class, 'createAppointment'])->name('createAppointment');
         Route::get('/getUserAdress',[App\Http\Controllers\front\api\indexController::class, 'getUserAdress'])->name('getUserAdress');
+        Route::get('/getReelTimeAppointment',[App\Http\Controllers\front\api\indexController::class, 'getReelTimeAppointment'])->name('getReelTimeAppointment');
         Route::post('/deleteUserAdress/{id}',[App\Http\Controllers\front\api\indexController::class, 'deleteUserAdress'])->name('deleteUserAdress');
+        Route::get('/getWorkerProfile/{il?}',[App\Http\Controllers\front\api\indexController::class, 'getWorkerProfile'])->name('getWorkerProfile');
+        Route::get('/getWorker/{id?}',[App\Http\Controllers\front\api\indexController::class, 'getWorker'])->name('getWorker');
+        Route::get('/getServiceList/{id?}',[App\Http\Controllers\front\api\indexController::class, 'getServiceList'])->name('getServiceList');
     });
 
 

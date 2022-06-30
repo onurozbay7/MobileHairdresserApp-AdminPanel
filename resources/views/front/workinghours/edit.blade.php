@@ -2,7 +2,7 @@
 @section('content')
     <div class="row page-title clearfix">
         <div class="page-title-left">
-            <h6 class="page-title-heading mr-0 mr-r-5">Çalışma Saatleri <small> Çalışma Saati Ekle</small></h6>
+            <h6 class="page-title-heading mr-0 mr-r-5">Çalışma Saatleri <small> Çalışma Saati Düzenle</small></h6>
 
 
         </div>
